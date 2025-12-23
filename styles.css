@@ -242,7 +242,7 @@ section {
 
 @media (min-width: 1024px) {
     .hero-container {
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 55fr 45fr;
     }
 }
 
@@ -259,15 +259,24 @@ section {
 @media (min-width: 1024px) {
     .hero-content {
         padding-left: calc((100vw - 1200px) / 2 + var(--space-8));
-        padding-right: var(--space-12);
+        padding-right: var(--space-16);
+        max-width: 100%;
     }
 }
 
+/* The Clip-Path Visual */
 .hero-visual {
     position: relative;
-    min-height: 400px;
+    min-height: 500px;
     background: var(--primary);
     overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    .hero-visual {
+        clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+        margin-left: -5%;
+    }
 }
 
 .hero-image-wrapper {
@@ -285,18 +294,9 @@ section {
     display: block;
 }
 
-/* The Angle Divider */
-@media (min-width: 1024px) {
-    .hero-angle-divider {
-        position: absolute;
-        top: 0;
-        left: -80px;
-        width: 160px;
-        height: 100%;
-        background: var(--white);
-        transform: skewX(-8deg);
-        z-index: 1;
-    }
+/* Remove the old absolute divider logic */
+.hero-angle-divider {
+    display: none;
 }
 
 .hero-actions {
@@ -306,7 +306,6 @@ section {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
 }
 
 .hero h1 {
