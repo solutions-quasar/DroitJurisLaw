@@ -1,0 +1,12 @@
+/* CSS tokens and base styles */
+:root {
+    --primary: #1a2a44;
+    --secondary: #c5a059;
+    --text: #333;
+    --bg: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
