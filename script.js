@@ -21,7 +21,7 @@ const CONFIG = {
         title: "Legal services in Dieppe, New Brunswick.",
         subtitle: "Clarity in process, responsiveness in representation. Your trust is our priority.",
         cta: "Request a Consultation",
-        image: "assets/images/texture.png"
+        image: "assets/images/hero_split.png"
     },
     practiceAreas: [
         { id: 1, title: "Practice Area 1 (OWNER TO FILL)", description: "Detailed description of legal services offered in this area." },
@@ -104,12 +104,22 @@ function renderMobileNav() {
 function renderHero() {
     const hero = document.getElementById('hero');
     if (!hero) return;
-    hero.style.backgroundImage = `url('${CONFIG.hero.image}')`;
+    hero.className = 'hero hero-split';
     hero.innerHTML = `
-        <div class="hero-content">
-            <h1>${CONFIG.hero.title}</h1>
-            <p>${CONFIG.hero.subtitle}</p>
-            <a href="#contact" class="btn btn-primary">${CONFIG.hero.cta}</a>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>${CONFIG.hero.title}</h1>
+                <p>${CONFIG.hero.subtitle}</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">${CONFIG.hero.cta}</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <img src="${CONFIG.hero.image}" alt="Modern Law Office" class="hero-image">
+                    <div class="hero-angle-divider"></div>
+                </div>
+            </div>
         </div>
     `;
 }
