@@ -75,9 +75,21 @@ body {
 
     /* Content Layout Constraints */
     /* Use padding for top-bar to keep background full width */
+    /* Content Layout Constraints */
+    /* Use padding for top-bar to keep background full width */
     .top-bar {
-        padding-left: 15vw;
-        padding-right: 15vw;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .nav-container {
+        width: 100%;
+        max-width: 70vw;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
     }
 
     /* Sections */
@@ -157,6 +169,13 @@ p {
     align-items: center;
     height: auto;
     min-height: 140px;
+}
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
