@@ -24,12 +24,36 @@ const CONFIG = {
         image: "assets/images/hero_split.png"
     },
     practiceAreas: [
-        { id: 1, title: "Practice Area 1 (OWNER TO FILL)", description: "Detailed description of legal services offered in this area." },
-        { id: 2, title: "Practice Area 2 (OWNER TO FILL)", description: "Detailed description of legal services offered in this area." },
-        { id: 3, title: "Practice Area 3 (OWNER TO FILL)", description: "Detailed description of legal services offered in this area." },
-        { id: 4, title: "Practice Area 4 (OWNER TO FILL)", description: "Detailed description of legal services offered in this area." },
-        { id: 5, title: "Practice Area 5 (OWNER TO FILL)", description: "Detailed description of legal services offered in this area." },
-        { id: 6, title: "Practice Area 6 (OWNER TO FILL)", description: "Detailed description of legal services offered in this area." }
+        {
+            id: 1,
+            title: "Real Estate (Residential & Commercial)",
+            description: "Expert guidance for all your property transactions, from residential closings to commercial real estate development.",
+            image: "assets/images/practice_real_estate.png"
+        },
+        {
+            id: 2,
+            title: "Corporate Law",
+            description: "Strategic legal solutions for businesses, including incorporation, mergers, and contract negotiation.",
+            image: "assets/images/practice_corporate.png"
+        },
+        {
+            id: 3,
+            title: "Succession-Estate",
+            description: "Comprehensive estate planning and succession strategies to secure your legacy and family's future.",
+            image: "assets/images/practice_succession.png"
+        },
+        {
+            id: 4,
+            title: "Wills & Probate",
+            description: "Compassionate assistance with drafting wills and navigating the probate process with dignity and clarity.",
+            image: "assets/images/practice_wills.png"
+        },
+        {
+            id: 5,
+            title: "Municipal Law",
+            description: "Specialized representation for administrative and municipal legal matters, navigating regulations effectively.",
+            image: "assets/images/practice_municipal.png"
+        }
     ],
     whyChooseUs: [
         { title: "Client Focused", description: "Neutral, editable bullet point about our approach." },
@@ -186,10 +210,15 @@ function renderServices() {
         <h2 class="text-center mb-8">Our Services</h2>
         <div class="card-grid">
             ${CONFIG.practiceAreas.map(p => `
-                <div class="card">
-                    <h3>${p.title}</h3>
-                    <p>${p.description}</p>
-                    <a href="services.html" class="text-link">Learn More</a>
+                <div class="card service-card">
+                    <div class="service-card-image">
+                        <img src="${p.image}" alt="${p.title}" loading="lazy">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>${p.title}</h3>
+                        <p>${p.description}</p>
+                        <a href="services.html" class="text-link">Learn More</a>
+                    </div>
                 </div>
             `).join('')}
         </div>
