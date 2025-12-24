@@ -207,7 +207,8 @@ p {
 
     .top-actions .top-directions,
     .top-actions .top-email,
-    .top-actions .top-call {
+    .top-actions .top-call,
+    .top-actions .top-services {
         display: none;
     }
 }
