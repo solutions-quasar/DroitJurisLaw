@@ -394,7 +394,7 @@ section {
 /* The Clip-Path Visual */
 .hero-visual {
     position: relative;
-    min-height: 500px;
+    min-height: 400px;
     background: var(--primary);
     overflow: hidden;
 }
