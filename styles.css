@@ -7,6 +7,8 @@
     /* Colors - Premium Law Firm Palette */
     --primary: #0f172a;
     --primary-light: #1e293b;
+    --brand-red: #702F24;
+    /* New Logo Color */
     --secondary: #b68d40;
     --secondary-light: #d4af37;
     --accent: #f8fafc;
@@ -60,6 +62,25 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
+
+@media (min-width: 1024px) {
+    body {
+        max-width: 70%;
+        margin: 0 auto;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
+        /* Optional: adds subtle depth */
+        background-color: #fafafa;
+        /* Optional: distinct background for outside area */
+    }
+
+    /* Ensure content inside doesn't double-pad or break */
+    .top-bar,
+    footer {
+        max-width: 100%;
+        /* It is already constrained by body, just ensuring */
+    }
+}
+
 
 /* Fluid Typography */
 h1 {
@@ -125,8 +146,28 @@ p {
 .top-actions a {
     text-decoration: none;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    transition: background 0.2s ease;
+}
+
+.top-actions a:hover {
+    background: var(--bg-soft);
+}
+
+.top-actions svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    color: var(--brand-red);
+    /* Premium touch */
 }
 
 @media (max-width: 600px) {
@@ -163,7 +204,7 @@ p {
 }
 
 .btn-primary {
-    background: var(--primary);
+    background: var(--brand-red);
     color: var(--white);
     box-shadow: var(--shadow-md);
 }
