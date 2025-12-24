@@ -64,21 +64,54 @@ body {
 }
 
 @media (min-width: 1024px) {
+
+    /* Revert body constraint to allow full-width backgrounds */
     body {
-        max-width: 70%;
-        margin: 0 auto;
-        box-shadow: 0 0 50px rgba(0, 0, 0, 0.05);
-        /* Optional: adds subtle depth */
-        background-color: #fafafa;
-        /* Optional: distinct background for outside area */
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+        background-color: var(--bg-main);
     }
 
-    /* Ensure content inside doesn't double-pad or break */
-    .top-bar,
-    footer {
-        max-width: 100%;
-        /* It is already constrained by body, just ensuring */
+    /* Content Layout Constraints */
+    /* Use padding for top-bar to keep background full width */
+    .top-bar {
+        padding-left: 15vw;
+        padding-right: 15vw;
     }
+
+    /* Sections */
+    section {
+        max-width: 70vw;
+        margin: 0 auto;
+    }
+
+    /* Hero */
+    .hero-container {
+        max-width: 70vw;
+        margin: 0 auto;
+        /* Re-establish grid columns for the constrained width */
+        grid-template-columns: 40fr 60fr;
+    }
+
+    .hero-content {
+        padding-left: 0;
+        /* Reset previous calculation */
+    }
+
+    /* Footer Content */
+    .footer .container {
+        max-width: 70vw;
+        margin: 0 auto;
+    }
+
+    .hero-visual {
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+        margin-left: -5%;
+    }
+
+    /* Alignment Adjustments - Padding handles this */
+    /* .logo and .top-actions margins removed to avoid double spacing */
 }
 
 

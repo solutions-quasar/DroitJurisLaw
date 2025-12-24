@@ -280,7 +280,7 @@ function renderLocation() {
         <h2 class="text-center mb-8">Our Location</h2>
         <div class="card location-card">
             <p>${CONFIG.business.address}</p>
-            <a href="https://maps.google.com/?q=${encodeURIComponent(CONFIG.business.address)}" target="_blank" class="btn btn-secondary">Open in Google Maps</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CONFIG.business.address)}" target="_blank" class="btn btn-secondary">Open in Google Maps</a>
         </div>
     `;
 }
