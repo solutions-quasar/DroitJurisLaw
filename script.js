@@ -279,8 +279,20 @@ function renderLocation() {
     section.innerHTML = `
         <h2 class="text-center mb-8">Our Location</h2>
         <div class="card location-card">
+            <div style="width: 100%; height: 400px; margin-bottom: 2rem; border-radius: var(--radius-md); overflow: hidden;">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    id="gmap_canvas" 
+                    src="https://maps.google.com/maps?q=${encodeURIComponent(CONFIG.business.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0">
+                </iframe>
+            </div>
             <p>${CONFIG.business.address}</p>
-            <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CONFIG.business.address)}" target="_blank" class="btn btn-secondary">Open in Google Maps</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(CONFIG.business.address)}" target="_blank" class="btn btn-primary">Open in Google Maps</a>
         </div>
     `;
 }
