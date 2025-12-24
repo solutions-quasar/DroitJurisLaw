@@ -365,8 +365,8 @@ section {
 
 @media (min-width: 1024px) {
     .hero-container {
-        grid-template-columns: 30fr 70fr;
-        /* Much wider image side */
+        grid-template-columns: 1fr 1fr;
+        /* Balanced 50/50 split */
     }
 }
 
