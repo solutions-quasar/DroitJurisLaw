@@ -37,9 +37,10 @@ const CONFIG = {
         { title: "Local Expertise", description: "Neutral, editable bullet point about our approach." }
     ],
     reviews: [
-        { author: "Client A", text: "Sample review placeholder (ADD REAL REVIEW). Very professional and clear communication.", rating: 5 },
-        { author: "Client B", text: "Sample review placeholder (ADD REAL REVIEW). Highly recommended for legal matters in Dieppe.", rating: 5 }
+        { author: "Marj Bourque", text: "Working with Louis is always a pleasure. He makes transactions easy and comfortable for everyone!", rating: 5 },
+        { author: "Bossé Jean-Michel", text: "Louis Ouellette has been my go-to lawyer for all of my real estate transactions for the past 8 years, and I couldn't be happier with his services. His deep knowledge of real estate law and his impeccable attention to detail have been invaluable.", rating: 5 }
     ],
+    googleMapsLink: "https://www.google.com/search?q=droit+juris+law#lrd=0x4ca8188287343b4f:0x6a2e48232675713c,1",
     process: [
         { step: "1", title: "Consultation", description: "Initial meeting to discuss your case." },
         { step: "2", title: "Strategy", description: "Developing a tailored legal plan." },
@@ -48,6 +49,22 @@ const CONFIG = {
     faq: [
         { q: "How do I start my case?", a: "Request a consultation via our form or call us directly." },
         { q: "What should I bring to the first meeting?", a: "Any documents relevant to your legal matter." }
+    ],
+    team: [
+        {
+            name: "André Daigle, LL.M.",
+            title: "Founder & Lead Counsel",
+            specialties: ["Administrative Law", "Municipal Law"],
+            image: "assets/images/andre_daigle.jpg",
+            bio: "With a Master of Laws (LL.M.) and years of dedicated service in Dieppe, André Daigle provides sophisticated legal solutions with a focus on administrative and municipal law."
+        },
+        {
+            name: "Louis M. Ouellette, B.A., LL.B.",
+            title: "Associate Counsel",
+            specialties: ["Real Estate - Immobilier", "Corporate Law"],
+            image: "assets/images/louis_ouellette.jpg",
+            bio: "Louis M. Ouellette brings extensive expertise in real estate and corporate law, ensuring smooth transactions and robust legal protection for business and residential clients."
+        }
     ],
     disclaimers: {
         contact: "Information only. Contacting us does not create a solicitor-client relationship. Do not send confidential information until we confirm representation."
@@ -132,10 +149,16 @@ function renderReviews() {
         <div class="card-grid">
             ${CONFIG.reviews.map(r => `
                 <div class="card review-card">
+                    <div class="rating mb-4">
+                        ${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}
+                    </div>
                     <p>"${r.text}"</p>
                     <cite>— ${r.author}</cite>
                 </div>
             `).join('')}
+        </div>
+        <div class="text-center mt-8">
+            <a href="${CONFIG.googleMapsLink}" target="_blank" class="btn btn-secondary">View more on Google</a>
         </div>
     `;
 }
@@ -177,13 +200,18 @@ function renderProcess() {
     const section = document.getElementById('process');
     if (!section) return;
     section.innerHTML = `
-        <h2 class="text-center mb-8">How It Works</h2>
-        <div class="process-steps">
-            ${CONFIG.process.map(s => `
+        <h2 class="text-center mb-12">How It Works</h2>
+        <div class="process-grid">
+            ${CONFIG.process.map((s, index) => `
                 <div class="step-card">
-                    <div class="step-number">${s.step}</div>
-                    <h3>${s.title}</h3>
-                    <p>${s.description}</p>
+                    <div class="step-header">
+                        <span class="step-number">0${s.step}</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-body">
+                        <h3>${s.title}</h3>
+                        <p>${s.description}</p>
+                    </div>
                 </div>
             `).join('')}
         </div>
@@ -194,14 +222,26 @@ function renderFAQ() {
     const section = document.getElementById('faq');
     if (!section) return;
     section.innerHTML = `
-        <h2 class="text-center mb-8">Frequently Asked Questions</h2>
-        <div class="faq-container">
-            ${CONFIG.faq.map(f => `
-                <div class="faq-item">
-                    <button class="faq-question">${f.q}</button>
-                    <div class="faq-answer"><p>${f.a}</p></div>
-                </div>
-            `).join('')}
+        <div class="faq-wrapper">
+            <div class="faq-header-content">
+                <h2>Common Questions</h2>
+                <p>Find quick answers to common legal process inquiries.</p>
+            </div>
+            <div class="faq-items">
+                ${CONFIG.faq.map(f => `
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>${f.q}</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>${f.a}</p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
         </div>
     `;
 }
@@ -210,14 +250,25 @@ function renderAbout() {
     const section = document.getElementById('about');
     if (!section) return;
     section.innerHTML = `
-        <div class="about-grid">
-            <div class="about-image">
-                <img src="assets/images/about.png" alt="Lawyer Office" loading="lazy">
-            </div>
-            <div class="about-content">
-                <h2>About Droit Juris Law</h2>
-                <p>Owner bio / credentials (OWNER TO FILL). We represent clients in Dieppe and surrounding areas with a focus on results and clear communication.</p>
-            </div>
+        <h2 class="text-center mb-12">Our Professionals</h2>
+        <div class="team-grid">
+            ${CONFIG.team.map(m => `
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="${m.image}" alt="${m.name}" loading="lazy">
+                    </div>
+                    <div class="team-content">
+                        <div class="team-meta">
+                            <span class="team-title">${m.title}</span>
+                            <h3>${m.name}</h3>
+                        </div>
+                        <p class="team-bio">${m.bio}</p>
+                        <div class="team-specialties">
+                            ${m.specialties.map(s => `<span class="tag">${s}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `).join('')}
         </div>
     `;
 }
