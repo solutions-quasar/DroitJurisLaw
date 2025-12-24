@@ -101,13 +101,14 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 64px;
+    height: auto;
+    min-height: 140px;
 }
 
 .logo {
     display: block;
-    height: 100%;
-    padding: var(--space-2) 0;
+    height: 120px;
+    padding: 0;
 }
 
 .logo img {
