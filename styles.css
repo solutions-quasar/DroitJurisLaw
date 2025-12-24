@@ -762,3 +762,46 @@ footer {
     font-weight: 600;
     text-decoration: none;
 }
+
+/* Service Card Specifics */
+.card.service-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-image {
+    width: 100%;
+    height: 200px;
+    background: var(--bg-light);
+    overflow: hidden;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card.service-card:hover .service-card-image img {
+    transform: scale(1.05);
+}
+
+.service-card-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.service-card-content p {
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
