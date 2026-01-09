@@ -152,6 +152,8 @@ function initApp() {
     renderLocation();
     renderContact();
     injectJSONLD();
+    renderOverlayMenu();
+    initFAQ();
 }
 
 function renderMobileNav() {
@@ -522,13 +524,5 @@ function initFAQ() {
         });
     });
 }
-
-// Update initApp to include new listeners
-const originalInitApp = initApp;
-initApp = function () {
-    originalInitApp();
-    renderOverlayMenu();
-    initFAQ();
-};
 
 console.log("Droit Juris Law v1.0.0");
