@@ -847,10 +847,29 @@ section {
     z-index: 2000;
     display: flex;
     flex-direction: column;
-    padding: var(--space-12) var(--space-8);
-    padding: var(--space-12) var(--space-8);
+    padding: var(--space-6) var(--space-6);
+    padding-bottom: 100px;
+    /* Clear the floating bottom bar */
+    overflow-y: auto;
+    /* Allow scrolling on very small screens if needed */
     transform: translateY(100%);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--bg-soft);
+    padding-top: var(--space-8);
+}
+
+.menu-footer h4 {
+    margin-bottom: var(--space-2);
+    color: var(--primary);
+}
+
+.menu-footer p {
+    color: var(--text-light);
+    margin-bottom: var(--space-1);
 }
 
 .menu-overlay.active {

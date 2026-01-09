@@ -9,6 +9,7 @@
         content="Premium legal services in Dieppe, New Brunswick. Professionalism, clarity, and responsiveness.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="password.css">
+    <link rel="stylesheet" href="i18n.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -33,43 +34,50 @@
             <a href="index.html" class="logo">
                 <img src="assets/images/logo.png" alt="Droit Juris Law">
             </a>
-            <div class="top-actions">
-                <a href="#services" class="top-services">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
-                    </svg>
-                    Practice Areas
-                </a>
-                <a href="tel:+15068302526" class="top-call">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                    </svg>
-                    Call
-                </a>
-                <a href="mailto:reception@droitjurislaw.com" class="top-email">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                    Email
-                </a>
-                <a href="https://maps.google.com/?q=678+Champlain+Street,+Dieppe,+NB,+Canada" target="_blank"
-                    class="top-directions">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                    </svg>
-                    Directions
-                </a>
+            <div class="nav-right-group">
+                <div class="lang-toggle-container">
+                    <button class="lang-btn active" data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="fr" onclick="setLanguage('fr')">FR</button>
+                </div>
+                <div class="top-actions">
+                    <a href="#services" class="top-services">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+                        </svg>
+                        <span data-i18n="nav.practiceAreas">Practice Areas</span>
+                    </a>
+                    <a href="tel:+15068302526" class="top-call">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                        </svg>
+                        <span data-i18n="nav.call">Call</span>
+                    </a>
+                    <a href="mailto:reception@droitjurislaw.com" class="top-email">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                        <span data-i18n="nav.email">Email</span>
+                    </a>
+                    <a href="https://maps.google.com/?q=678+Champlain+Street,+Dieppe,+NB,+Canada" target="_blank"
+                        class="top-directions">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                        </svg>
+                        <span data-i18n="nav.directions">Directions</span>
+                    </a>
+                </div>
             </div>
         </div>
         <nav class="desktop-nav" style="display: none;">
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
+            <a href="#services" data-i18n="nav.services">Services</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#faq" data-i18n="nav.faq">FAQ</a>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
     </header>
 
@@ -77,14 +85,14 @@
         <!-- Hero Section -->
         <section id="hero" class="hero"></section>
 
+        <!-- Services / Practice Areas -->
+        <section id="services"></section>
+
         <!-- Reviews Section -->
         <section id="reviews"></section>
 
         <!-- Why Choose Us -->
         <section id="why-choose-us"></section>
-
-        <!-- Services / Practice Areas -->
-        <section id="services"></section>
 
         <!-- Process -->
         <section id="process"></section>
@@ -107,30 +115,31 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <img src="assets/images/logo.png" alt="Droit Juris Law" class="footer-logo">
-                    <p class="footer-tagline">Clarity in process.<br>Responsiveness in representation.</p>
+                    <p class="footer-tagline" data-i18n="sectionTitles.footerTagline">Clarity in
+                        process.<br>Responsiveness in representation.</p>
                 </div>
 
                 <div class="footer-nav-group">
                     <div class="footer-column">
-                        <h4>Navigation</h4>
+                        <h4 data-i18n="sectionTitles.footerNav">Navigation</h4>
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#about">About Firm</a></li>
-                            <li><a href="#process">Our Process</a></li>
-                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#" data-i18n="nav.home">Home</a></li>
+                            <li><a href="#about" data-i18n="nav.about">About Firm</a></li>
+                            <li><a href="#process" data-i18n="sectionTitles.process">Our Process</a></li>
+                            <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>Practice Areas</h4>
+                        <h4 data-i18n="sectionTitles.footerPractice">Practice Areas</h4>
                         <ul>
-                            <li><a href="#services">Real Estate</a></li>
-                            <li><a href="#services">Corporate Law</a></li>
-                            <li><a href="#services">Wills &amp; Estates</a></li>
-                            <li><a href="#services">Municipal Law</a></li>
+                            <li><a href="#services" data-i18n="practiceAreas.0.title">Real Estate</a></li>
+                            <li><a href="#services" data-i18n="practiceAreas.1.title">Corporate Law</a></li>
+                            <li><a href="#services" data-i18n="practiceAreas.2.title">Wills &amp; Estates</a></li>
+                            <li><a href="#services" data-i18n="practiceAreas.4.title">Municipal Law</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>Contact</h4>
+                        <h4 data-i18n="sectionTitles.footerContact">Contact</h4>
                         <address>
                             <p>678 Champlain Street<br>Dieppe, NB, Canada</p>
                             <a href="tel:+15068302526" class="footer-contact-link">(506) 830-2526</a>
@@ -144,8 +153,9 @@
             <div class="footer-divider"></div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Droit Juris Law. All rights reserved.</p>
-                <p class="disclaimer">Information only. Contacting us does not create a solicitor-client relationship.
+                <p>&copy; 2025 Droit Juris Law. <span data-i18n="sectionTitles.rights">All rights reserved.</span></p>
+                <p class="disclaimer" data-i18n="sectionTitles.disclaimer">Information only. Contacting us does not
+                    create a solicitor-client relationship.
                 </p>
             </div>
         </div>
