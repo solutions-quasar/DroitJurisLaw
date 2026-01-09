@@ -105,8 +105,40 @@ const ICONS = {
 
 // Core Interaction Logic
 document.addEventListener('DOMContentLoaded', () => {
-    initApp();
+    checkPassword();
 });
+
+function checkPassword() {
+    const overlay = document.getElementById('password-overlay');
+    const form = document.getElementById('password-form');
+    const input = document.getElementById('site-password');
+    const errorMsg = document.getElementById('password-error');
+
+    // Check if already authenticated in this session
+    if (sessionStorage.getItem('droit_auth') === 'true') {
+        overlay.style.display = 'none';
+        initApp();
+        return;
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const password = input.value;
+        // Simple password check - Client side only (Not secure for sensitive data, but sufficient for basic gating)
+        if (password === 'droit2025') {
+            sessionStorage.setItem('droit_auth', 'true');
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                initApp();
+            }, 500); // Fade out effect
+        } else {
+            errorMsg.textContent = 'Incorrect password. Please try again.';
+            input.value = '';
+            input.focus();
+        }
+    });
+}
 
 function initApp() {
     renderMobileNav();
