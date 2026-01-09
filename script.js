@@ -77,14 +77,14 @@ const CONFIG = {
     team: [
         {
             name: "André Daigle, LL.M.",
-            title: "Founder & Lead Counsel",
+            title: "Co-Founder & Lead Counsel",
             specialties: ["Administrative Law", "Municipal Law"],
             image: "assets/images/andre_daigle.jpg",
             bio: "With a Master of Laws (LL.M.) and years of dedicated service in Dieppe, André Daigle provides sophisticated legal solutions with a focus on administrative and municipal law."
         },
         {
             name: "Louis M. Ouellette, B.A., LL.B.",
-            title: "Associate Counsel",
+            title: "Co-Founder & Counsel",
             specialties: ["Real Estate - Immobilier", "Corporate Law"],
             image: "assets/images/louis_ouellette.jpg",
             bio: "Louis M. Ouellette brings extensive expertise in real estate and corporate law, ensuring smooth transactions and robust legal protection for business and residential clients."
